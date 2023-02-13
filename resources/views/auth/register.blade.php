@@ -7,7 +7,7 @@
     <title>Register</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="/register" method="post">
         @csrf
         <input type="text" name="company" id="company" placeholder="company">
         <input type="text" name="name" id="name" placeholder="name">

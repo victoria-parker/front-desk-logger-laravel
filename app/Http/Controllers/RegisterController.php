@@ -9,8 +9,19 @@ use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
+
+    public function show(){
+        return view('auth.register');
+    }
+
     public function register(RegisterRequest $request){
-        $user=User::create($request->validated());
-        return redirect('/login')->with('success','Account created successfully');
+
+            $user=User::create($request->validated());
+            $company=new Company;
+            $company->company=$request->company;
+            $company->save();
+            return redirect('/login')->with('success','Account created successfully');
+
+
     }
 }
