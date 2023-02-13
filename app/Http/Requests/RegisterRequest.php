@@ -27,7 +27,7 @@ class RegisterRequest extends FormRequest
             'email'=>'required|unique:users,email',
             'name'=>'required',
             'lastname'=>'required',
-            'company'=>'required',
+            'company'=>'required|unique:companies,company',
             'password'=>'required|min:8',
             'password_confirmation'=>'required|same:password'
         ];
