@@ -29,4 +29,11 @@ class LoginRequest extends FormRequest
         ];
     }
 
+    public function getCredentials(){
+
+        $email=$this->get('email');
+        $password=$this->get('password');
+
+        return ['email'=>$email,'password'=>$password];
+    }
 }
