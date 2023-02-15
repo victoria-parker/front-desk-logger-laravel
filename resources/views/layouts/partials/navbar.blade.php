@@ -31,7 +31,7 @@
         <ul class="navbar-nav me-5 mb-2 mb-lg-0">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                {{auth()->user()->name ?? auth()->user()->username}}
+                {{ucwords(auth()->user()->name)}}
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Action</a></li>
