@@ -17,15 +17,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Home
+Route::get('/', [HomeController::class,'show']);
+Route::get('/home', [HomeController::class,'show']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+// Register
 Route::get('/register', [RegisterController::class,'show']);
 Route::post('/register',[RegisterController::class,'register']);
+
+// Login
 Route::get('/login', [LoginController::class,'show']);
 Route::post('/login',[LoginController::class,'login']);
-Route::get('/home', [HomeController::class,'show']);
+
+// Logout
 Route::get('/logout',[LogoutController::class,'logout']);
 
