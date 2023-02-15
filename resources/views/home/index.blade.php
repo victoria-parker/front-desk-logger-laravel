@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    HOME
+    Welcome {{ucwords(auth()->user()->name)}}
 </body>
 </html>
