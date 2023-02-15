@@ -8,5 +8,6 @@
 </head>
 <body>
     Welcome {{ucwords(auth()->user()->name)}}
+    <a href="/logout">logout</a>
 </body>
 </html>
