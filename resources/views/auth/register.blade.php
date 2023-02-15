@@ -7,6 +7,8 @@
     <form action="/register" method="post">
         @csrf
 
+        @include('layouts.partials.messages')
+
         <div class="mb-3 form-floating">
             <input type="text" placeholder="Company" class="form-control" id="company"  name="company" >
           <label for="company" class="form-label">Company</label>
