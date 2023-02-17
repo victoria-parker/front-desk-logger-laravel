@@ -14,7 +14,7 @@ class HomeController extends Controller
             return redirect('/login');
         }
         
-        $issues=Issue::all()->where('company',Auth::user()->company);
+        $issues=Issue::all()->where('company',Auth::user()->company)->where('resolved',false);
 
         return view('home.index', ['issues'=>$issues]);
     }
