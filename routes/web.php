@@ -19,8 +19,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // Home
-Route::get('/', [HomeController::class,'show']);
-Route::get('/home', [HomeController::class,'show']);
+Route::get('/', [HomeController::class,'index']);
+Route::get('/home', [HomeController::class,'index']);
 
 // Register
 Route::get('/register', [RegisterController::class,'show']);

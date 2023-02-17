@@ -13,29 +13,29 @@
     </tr>
 </thead>
 <tbody>
-
-    <tr>
-        <td>200</td>
-        <td>text</td>
-        <td>date</td>
-        <td>
-            <div class="d-flex justify-content-evenly align-items-center">
-                <form
-                    action="issues"
-                    method="post"
-                    class="removeForm"
-                >
-                    <input type="hidden" name="_method" value="put">
-                    <button type="submit" class="btn btn-link text-decoration-none link-danger p-0">
-                        <i class='fas fa-trash-alt'></i>
-                    </button>
-                </form> 
-                <a href="#" class="text-decoration-none link-warning"><i class="fas fa-edit"></i></a> 
-                <a href="#" class="text-decoration-none link-info"><i class="fas fa-info-circle"></i></a></td>
-            </div>
-        </td>
-    </tr>
-
+    @foreach ($issues as $issue)
+        <tr>
+            <td>{{$issue->room_number}}</td>
+            <td>{{$issue->issue}}</td>
+            <td>{{$issue->created_at}}</td>
+            <td>
+                <div class="d-flex justify-content-evenly align-items-center">
+                    <form
+                        action="issues"
+                        method="post"
+                        class="removeForm"
+                    >
+                        <input type="hidden" name="_method" value="put">
+                        <button type="submit" class="btn btn-link text-decoration-none link-danger p-0">
+                            <i class='fas fa-trash-alt'></i>
+                        </button>
+                    </form> 
+                    <a href="#" class="text-decoration-none link-warning"><i class="fas fa-edit"></i></a> 
+                    <a href="#" class="text-decoration-none link-info"><i class="fas fa-info-circle"></i></a></td>
+                </div>
+            </td>
+        </tr>
+    @endforeach
 
 </tbody>
 </table>
