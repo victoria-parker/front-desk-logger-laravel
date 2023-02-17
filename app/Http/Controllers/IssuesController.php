@@ -22,7 +22,7 @@ class IssuesController extends Controller
         $issue->resolved=false;
         $issue->save();
 
-        return redirect()->route('home')->with('success','issue added correctly.');
+        return redirect('home')->with('success','issue added correctly.');
 
     }
 }
