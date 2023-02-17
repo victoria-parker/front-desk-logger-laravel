@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\IssuesController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
@@ -32,3 +33,5 @@ Route::post('/login',[LoginController::class,'login']);
 // Logout
 Route::get('/logout',[LogoutController::class,'logout']);
 
+//Issues
+Route::post('/issues',[IssuesController::class,'store']); 

@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('issues', function (Blueprint $table) {
             $table->id();
-            $table->string('created_by');
+            $table->bigInteger('created_by');
             $table->string('issue');
             $table->integer('room_number');
             $table->boolean('resolved');
+            $table->string('company');
             $table->timestamps();
         });
     }

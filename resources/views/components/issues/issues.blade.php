@@ -49,20 +49,16 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form method="post" action="issues/createIssue">
+            <form method="post" action="issues">
+                @csrf
                 <div class="mb-3">
-                  <label for="roomNumber" class="col-form-label">Room number:</label>
-                  <input type="number" class="form-control" id="roomNumber" name="roomNumber">
+                  <label for="room_number" class="col-form-label">Room number:</label>
+                  <input type="number" class="form-control" id="room_number" name="room_number">
                 </div>
 
                 <div class="mb-3">
-                    <label for="guestName" class="col-form-label">Guest Name:</label>
-                    <input type="text" class="form-control" id="guestName" name="guestName">
-                </div>
-
-                <div class="mb-3">
-                  <label for="text" class="col-form-label">Issue:</label>
-                  <textarea class="form-control" id="text" name="text"></textarea>
+                  <label for="issue" class="col-form-label">Issue:</label>
+                  <textarea class="form-control" id="issue" name="issue"></textarea>
                 </div>
 
                 <div class="modal-footer">
