@@ -17,5 +17,9 @@ class NotesController extends Controller
         $note->created_by=Auth::user()->id;
         $note->company=Auth::user()->company;
         $note->note=$request->note;
+        $note->resolved=false;
+        $note->save();
+
+        return redirect('home')->with('success','note added correctly');
     }
 }
