@@ -14,12 +14,12 @@
         </tr>
     </thead>
     <tbody>
-
+        @foreach ($wake_up_calls as $wake_up_call)
             <tr>
-                <td>400</td>
-                <td>7:00am</td>
-                <td>Mr. Smith</td>
-                <td>text</td>
+                <td>{{$wake_up_call->room_number}}</td>
+                <td>{{$wake_up_call->wake_up_time}}</td>
+                <td>{{$wake_up_call->guest_name}}</td>
+                <td>{{$wake_up_call->observations}}</td>
                 <td>
                     <div class="d-flex justify-content-evenly align-items-center">
                         <form
@@ -37,7 +37,7 @@
                     </div>
                 </td>
             </tr>
-
+        @endforeach
     </tbody>
 </table>
 
