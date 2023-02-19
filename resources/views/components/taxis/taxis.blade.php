@@ -14,30 +14,30 @@
         </tr>
     </thead>
     <tbody>
-
-        <tr>
-            <td>152</td>
-            <td>pickup time</td>
-            <td>4568</td>
-            <td>text</td>
-            <td>
-                <div class="d-flex justify-content-evenly align-items-center">
-                    <form
-                        action="issues"
-                        method="post"
-                        class="removeForm"
-                    >
-                        <input type="hidden" name="_method" value="put">
-                        <button type="submit" class="btn btn-link text-decoration-none link-danger p-0">
-                            <i class='fas fa-trash-alt'></i>
-                        </button>
-                    </form> 
-                    <a href="#" class="text-decoration-none link-warning"><i class="fas fa-edit"></i></a> 
-                    <a href="#" class="text-decoration-none link-info"><i class="fas fa-info-circle"></i></a></td>
-                </div>
-            </td>
-        </tr>
-
+        @foreach ($taxis as $taxi)
+            <tr>
+                <td>{{$taxi->room_number}}</td>
+                <td>{{$taxi->pick_up_time}}</td>
+                <td>{{$taxi->booking_number}}</td>
+                <td>{{$taxi->observations}}</td>
+                <td>
+                    <div class="d-flex justify-content-evenly align-items-center">
+                        <form
+                            action="issues"
+                            method="post"
+                            class="removeForm"
+                        >
+                            <input type="hidden" name="_method" value="put">
+                            <button type="submit" class="btn btn-link text-decoration-none link-danger p-0">
+                                <i class='fas fa-trash-alt'></i>
+                            </button>
+                        </form> 
+                        <a href="#" class="text-decoration-none link-warning"><i class="fas fa-edit"></i></a> 
+                        <a href="#" class="text-decoration-none link-info"><i class="fas fa-info-circle"></i></a></td>
+                    </div>
+                </td>
+            </tr>
+        @endforeach
     </tbody>
 </table>
 
@@ -50,20 +50,21 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form method="post" action="taxis/createTaxi">
+            <form method="post" action="taxis">
+                @csrf
                 <div class="mb-3">
-                  <label for="roomNumber" class="col-form-label">Room number:</label>
-                  <input type="number" class="form-control" id="roomNumber" name="roomNumber">
+                  <label for="room_number" class="col-form-label">Room number:</label>
+                  <input type="number" class="form-control" id="room_number" name="room_number">
                 </div>
 
                 <div class="mb-3">
-                    <label for="pickUpTime" class="col-form-label">Pick up time:</label>
-                    <input type="datetime-local" class="form-control" id="pickUpTime" name="pickUpTime">
+                    <label for="pick_up_time" class="col-form-label">Pick up time:</label>
+                    <input type="datetime-local" class="form-control" id="pick_up_time" name="pick_up_time">
                 </div>
 
                 <div class="mb-3">
-                    <label for="bookingNumber" class="col-form-label">Booking number:</label>
-                    <input type="number" class="form-control" id="bookingNumber" name="bookingNumber">
+                    <label for="booking_number" class="col-form-label">Booking number:</label>
+                    <input type="number" class="form-control" id="booking_number" name="booking_number">
                   </div>
 
                 <div class="mb-3">

@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\NotesController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\TaxisController;
 use App\Http\Controllers\WakeUpCallsController;
 use Illuminate\Support\Facades\Route;
 
@@ -42,3 +43,6 @@ Route::post('/wakeUpCalls',[WakeUpCallsController::class,'store']);
 
 //Notes 
 Route::post('/notes',[NotesController::class,'store']);
+
+//Taxis
+Route::post('/taxis',[TaxisController::class,'store']);

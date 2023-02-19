@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('created_by');
             $table->integer('room_number');
+            $table->integer('booking_number');
             $table->dateTime('pick_up_time');
             $table->boolean('resolved');
             $table->string('observations')->nullable();
