@@ -18,6 +18,7 @@ return new class extends Migration
             $table->bigInteger('created_by');
             $table->boolean('resolved');
             $table->string('note');
+            $table->string('company');
             $table->timestamps();
         });
     }
