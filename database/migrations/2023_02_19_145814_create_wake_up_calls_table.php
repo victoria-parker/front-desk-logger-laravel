@@ -20,7 +20,7 @@ return new class extends Migration
             $table->dateTime('wake_up_time');
             $table->boolean('resolved');
             $table->string('guest_name');
-            $table->string('observations');
+            $table->string('observations')->nullable();
             $table->string('company');
             $table->timestamps();
         });
