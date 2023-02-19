@@ -10,7 +10,7 @@ class NotesController extends Controller
 {
     public function store(Request $request){
         $request->validate([
-            'note'=>'request'
+            'note'=>'required'
         ]);
 
         $note=new Note();

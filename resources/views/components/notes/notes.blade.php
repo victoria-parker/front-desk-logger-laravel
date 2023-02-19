@@ -12,10 +12,10 @@
         </tr>
     </thead>
     <tbody>
-
+        @foreach ($notes as $note)
             <tr>
-                <td>text</td>
-                <td>date</td>
+                <td>{{$note->note}}</td>
+                <td>{{$note->created_at}}</td>
                 <td>
                     <div class="d-flex justify-content-evenly align-items-center">
                         <form
@@ -33,7 +33,7 @@
                     </div>
                 </td>
             </tr>
-
+        @endforeach
     </tbody>
 </table>
 
@@ -46,10 +46,11 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form method="post" action="notes/createNote">
+            <form method="post" action="notes">
+                @csrf
                 <div class="mb-3">
-                  <label for="text" class="col-form-label">Note:</label>
-                  <textarea class="form-control" id="text" name="text"></textarea>
+                  <label for="note" class="col-form-label">Note:</label>
+                  <textarea class="form-control" id="note" name="note"></textarea>
                 </div>
 
                 <div class="modal-footer">
