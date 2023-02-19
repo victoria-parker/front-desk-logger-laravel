@@ -50,20 +50,21 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form method="post" action="wakeUpCalls/createWakeUpCall">
+            <form method="post" action="wakeUpCalls">
+                @csrf
                 <div class="mb-3">
-                  <label for="roomNumber" class="col-form-label">Room number:</label>
-                  <input type="number" class="form-control" id="roomNumber" name="roomNumber">
+                  <label for="room_number" class="col-form-label">Room number:</label>
+                  <input type="number" class="form-control" id="room_number" name="room_number">
                 </div>
 
                 <div class="mb-3">
-                    <label for="wakeUpTime" class="col-form-label">Wake up time time:</label>
-                    <input type="datetime-local" class="form-control" id="wakeUpTime" name="wakeUpTime">
+                    <label for="wake_up_time" class="col-form-label">Wake up time time:</label>
+                    <input type="datetime-local" class="form-control" id="wake_up_time" name="wake_up_time">
                 </div>
 
                 <div class="mb-3">
-                    <label for="guestName" class="col-form-label">Guest Name:</label>
-                    <input type="text" class="form-control" id="guestName" name="guestName">
+                    <label for="guest_name" class="col-form-label">Guest Name:</label>
+                    <input type="text" class="form-control" id="guest_name" name="guest_name">
                   </div>
 
                 <div class="mb-3">
